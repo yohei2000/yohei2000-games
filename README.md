@@ -1,6 +1,6 @@
 # yohei2000 Games
 
-GitHub Pagesで公開しているゲーム、シミュレーション、小さな制作ツールへのリンクだけを集めたランディングページです。
+Landing page for yohei2000 GitHub Pages games and interactive demos.
 
 ## Public Page
 
@@ -15,4 +15,4 @@ https://yohei2000.github.io/yohei2000-games/
 
 ## Source Policy
 
-The page links only to public GitHub Pages URLs. Repository source links are intentionally omitted from the landing page.
+The landing page links only to public GitHub Pages URLs. Repository source links are intentionally omitted from the page.

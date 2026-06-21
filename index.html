@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>yohei2000 Games</title>
+    <meta
+      name="description"
+      content="yohei2000がGitHub Pagesで公開しているゲームと小さな制作物のギャラリー。"
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #13171d;
+        --muted: #586170;
+        --line: #d9dee7;
+        --paper: #f7f8fb;
+        --panel: #ffffff;
+        --night: #070b12;
+        --teal: #0d9488;
+        --amber: #d97706;
+        --coral: #e35d4f;
+        --blue: #2563eb;
+        --violet: #7c3aed;
+        font-family:
+          Inter, "Segoe UI", "Hiragino Kaku Gothic ProN", "Yu Gothic UI",
+          "Yu Gothic", Meiryo, sans-serif;
+        letter-spacing: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .hero {
+        position: relative;
+        min-height: clamp(480px, 82vh, 760px);
+        display: grid;
+        align-items: end;
+        overflow: hidden;
+        background:
+          linear-gradient(90deg, rgba(5, 8, 13, 0.86), rgba(5, 8, 13, 0.54) 48%, rgba(5, 8, 13, 0.18)),
+          url("assets/ecosystem-god-sim.png") center / cover;
+        color: #ffffff;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: auto 0 0;
+        height: 34%;
+        background: linear-gradient(180deg, rgba(7, 11, 18, 0), var(--paper));
+        pointer-events: none;
+      }
+
+      .hero-inner,
+      .section-inner {
+        width: min(1180px, calc(100% - 40px));
+        margin-inline: auto;
+      }
+
+      .hero-inner {
+        position: relative;
+        z-index: 1;
+        padding: 32px 0 92px;
+      }
+
+      .eyebrow {
+        margin: 0 0 18px;
+        color: #a7f3d0;
+        font-size: 0.82rem;
+        font-weight: 800;
+      }
+
+      h1 {
+        max-width: 780px;
+        margin: 0;
+        font-size: clamp(3rem, 9vw, 6.7rem);
+        line-height: 0.94;
+        letter-spacing: 0;
+      }
+
+      .lead {
+        max-width: 680px;
+        margin: 24px 0 0;
+        color: #e7eef8;
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        line-height: 1.9;
+      }
+
+      .stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 30px;
+      }
+
+      .stat {
+        border: 1px solid rgba(255, 255, 255, 0.28);
+        border-radius: 8px;
+        padding: 10px 14px;
+        background: rgba(255, 255, 255, 0.08);
+        color: #f8fafc;
+        font-size: 0.92rem;
+      }
+
+      main {
+        position: relative;
+        z-index: 2;
+      }
+
+      .intro {
+        padding: 34px 0 18px;
+      }
+
+      .intro p {
+        max-width: 760px;
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.9;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        padding: 18px 0 64px;
+      }
+
+      .item {
+        --accent: var(--teal);
+        display: grid;
+        grid-template-rows: auto 1fr;
+        min-width: 0;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-top: 4px solid var(--accent);
+        border-radius: 8px;
+        background: var(--panel);
+        text-decoration: none;
+        box-shadow: 0 12px 36px rgba(19, 23, 29, 0.08);
+        transition:
+          transform 160ms ease,
+          box-shadow 160ms ease,
+          border-color 160ms ease;
+      }
+
+      .item:hover {
+        transform: translateY(-3px);
+        border-color: color-mix(in srgb, var(--accent) 50%, var(--line));
+        box-shadow: 0 18px 42px rgba(19, 23, 29, 0.13);
+      }
+
+      .shot {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        background: #111827;
+        display: block;
+      }
+
+      .copy {
+        display: grid;
+        gap: 12px;
+        padding: 18px;
+      }
+
+      .copy h2 {
+        margin: 0;
+        font-size: 1.1rem;
+        line-height: 1.35;
+      }
+
+      .copy p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.94rem;
+        line-height: 1.72;
+      }
+
+      .open {
+        align-self: end;
+        color: var(--accent);
+        font-size: 0.86rem;
+        font-weight: 800;
+      }
+
+      .item:nth-child(2) {
+        --accent: var(--amber);
+      }
+
+      .item:nth-child(3) {
+        --accent: var(--coral);
+      }
+
+      .item:nth-child(4) {
+        --accent: var(--teal);
+      }
+
+      .item:nth-child(5) {
+        --accent: var(--blue);
+      }
+
+      .item:nth-child(6) {
+        --accent: var(--violet);
+      }
+
+      .item:nth-child(7) {
+        --accent: #16a34a;
+      }
+
+      .item:nth-child(8) {
+        --accent: #0891b2;
+      }
+
+      .item:nth-child(9) {
+        --accent: #db2777;
+      }
+
+      .item:nth-child(10) {
+        --accent: #64748b;
+      }
+
+      footer {
+        border-top: 1px solid var(--line);
+        background: #eef2f7;
+      }
+
+      footer .section-inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 22px 0;
+        color: var(--muted);
+        font-size: 0.88rem;
+      }
+
+      @media (max-width: 920px) {
+        .grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 640px) {
+        .hero-inner,
+        .section-inner {
+          width: min(100% - 28px, 1180px);
+        }
+
+        .hero {
+          min-height: 76vh;
+          background-position: 56% center;
+        }
+
+        .hero-inner {
+          padding-bottom: 76px;
+        }
+
+        .lead {
+          line-height: 1.75;
+        }
+
+        .stats {
+          gap: 8px;
+        }
+
+        .stat {
+          width: 100%;
+        }
+
+        .grid {
+          grid-template-columns: 1fr;
+          gap: 16px;
+          padding-bottom: 44px;
+        }
+
+        .copy {
+          padding: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">GITHUB PAGES COLLECTION</p>
+        <h1>yohei2000 Games</h1>
+        <p class="lead">
+          実験中のゲーム、シミュレーション、小さな制作ツールを、公開ページだけに絞って並べたポートフォリオです。
+        </p>
+        <div class="stats" aria-label="公開状況">
+          <span class="stat">10 public pages</span>
+          <span class="stat">GitHub Pages only</span>
+          <span class="stat">Updated 2026.06.21</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="collection-title">
+        <div class="section-inner">
+          <p id="collection-title">
+            それぞれのカードから、デモとして公開されているページへ直接移動できます。リポジトリページへのリンクは入れず、遊べる画面・触れる画面だけに絞っています。
+          </p>
+        </div>
+      </section>
+
+      <section class="section-inner grid" aria-label="公開ページ一覧">
+        <a class="item" href="https://yohei2000.github.io/alien_kick/" target="_blank" rel="noopener noreferrer">
+          <img class="shot" src="assets/alien_kick.png" alt="エイリアンキックバスターのタイトル画面" />
+          <span class="copy">
+            <h2>エイリアンキックバスター</h2>
+            <p>侵入してくる相手を蹴り返す、軽快なアーケード寄りアクション。</p>
+            <span class="open">Open page</span>
+          </span>
+        </a>
+
+        <a class="item" href="https://yohei2000.github.io/ant-colony-reaction-lab/" target="_blank" rel="noopener noreferrer">
+          <img class="shot" src="assets/ant-colony-reaction-lab.png" alt="蟻の群れリアクションラボ3Dのシミュレーション画面" />
+          <span class="copy">
+            <h2>蟻の群れリアクションラボ 3D</h2>
+            <p>小さな個体の反応が群れ全体の動きへ広がる、観察型3Dラボ。</p>
+            <span class="open">Open page</span>
+          </span>
+        </a>
+
+        <a class="item" href="https://yohei2000.github.io/battle-intent-sim/" target="_blank" rel="noopener noreferrer">
+          <img class="shot" src="assets/battle-intent-sim.png" alt="Intent Battle Simの戦闘判断画面" />
+          <span class="copy">
+            <h2>Intent Battle Sim</h2>
+            <p>攻撃意図や読み合いを軸に、戦いの流れを見立てる思考実験シム。</p>
+            <span class="open">Open page</span>
+          </span>
+        </a>
+
+        <a class="item" href="https://yohei2000.github.io/ecosystem-god-sim/" target="_blank" rel="noopener noreferrer">
+          <img class="shot" src="assets/ecosystem-god-sim.png" alt="Ecosystem God Simの生態系フィールド" />
+          <span class="copy">
+            <h2>Ecosystem God Sim</h2>
+            <p>地形、植物、生き物のバランスを眺めながら介入する生態系サンドボックス。</p>
+            <span class="open">Open page</span>
+          </span>
+        </a>
+
+        <a class="item" href="https://yohei2000.github.io/manga-panel-editor/" target="_blank" rel="noopener noreferrer">
+          <img class="shot" src="assets/manga-panel-editor.png" alt="Manga Panel Editorの編集画面" />
+          <span class="copy">
+            <h2>Manga Panel Editor</h2>
+            <p>ページ構成を素早く試すための、漫画コマ割り編集ツール。</p>
+            <span class="open">Open page</span>
+          </span>
+        </a>
+
+        <a class="item" href="https://yohei2000.github.io/paper-jam-dodgeball/" target="_blank" rel="noopener noreferrer">
+          <img class="shot" src="assets/paper-jam-dodgeball.png" alt="Paper Jam Dodgeballの3Dコート画面" />
+          <span class="copy">
+            <h2>Paper Jam Dodgeball</h2>
+            <p>紙工作のようなキャラクターが入り乱れる、にぎやかな3Dドッジボール。</p>
+            <span class="open">Open page</span>
+          </span>
+        </a>
+
+        <a class="item" href="https://yohei2000.github.io/slime-battle-3d-mvp/" target="_blank" rel="noopener noreferrer">
+          <img class="shot" src="assets/slime-battle-3d-mvp.png" alt="Slime Battle 3D MVPのアリーナ画面" />
+          <span class="copy">
+            <h2>Slime Battle 3D MVP</h2>
+            <p>ぷるっとしたユニットの衝突と押し合いを楽しむ、ミニマルな3Dバトル試作。</p>
+            <span class="open">Open page</span>
+          </span>
+        </a>
+
+        <a class="item" href="https://yohei2000.github.io/slime-battle-sim/" target="_blank" rel="noopener noreferrer">
+          <img class="shot" src="assets/slime-battle-sim.png" alt="弾性軍団シムの準備画面" />
+          <span class="copy">
+            <h2>弾性軍団シム</h2>
+            <p>弾性や編成を変えながら、スライム軍団のぶつかり方を試す戦術シム。</p>
+            <span class="open">Open page</span>
+          </span>
+        </a>
+
+        <a class="item" href="https://yohei2000.github.io/slime-battle-viscosity/" target="_blank" rel="noopener noreferrer">
+          <img class="shot" src="assets/slime-battle-viscosity.png" alt="Slime Battle Viscosityのタイトル画面" />
+          <span class="copy">
+            <h2>Slime Battle Viscosity</h2>
+            <p>粘性という手触りをバトルのルールに持ち込む、物性テーマの試作。</p>
+            <span class="open">Open page</span>
+          </span>
+        </a>
+
+        <a class="item" href="https://yohei2000.github.io/splash-tomb/" target="_blank" rel="noopener noreferrer">
+          <img class="shot" src="assets/splash-tomb.png" alt="Splash Tombの暗いステージ画面" />
+          <span class="copy">
+            <h2>Splash Tomb</h2>
+            <p>暗い空間と鋭い形状で構成された、探索感のあるミニゲーム。</p>
+            <span class="open">Open page</span>
+          </span>
+        </a>
+      </section>
+    </main>
+
+    <footer>
+      <div class="section-inner">
+        <span>yohei2000 GitHub Pages collection</span>
+        <span>Links verified: 2026-06-21</span>
+      </div>
+    </footer>
+  </body>
+</html>

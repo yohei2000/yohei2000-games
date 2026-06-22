@@ -6,7 +6,7 @@
     <title>yohei2000 Games</title>
     <meta
       name="description"
-      content="yohei2000 が GitHub Pages で公開しているゲームと小さな制作ツールをまとめた公開ページです。"
+      content="yohei2000 が GitHub Pages で公開しているゲーム、シミュレーション、小さな制作ツールをまとめた公開ページです。"
     />
     <style>
       :root {
@@ -204,27 +204,35 @@
       }
 
       .item:nth-child(3) {
-        --accent: var(--coral);
+        --accent: #16a34a;
       }
 
       .item:nth-child(4) {
-        --accent: var(--teal);
+        --accent: var(--coral);
       }
 
       .item:nth-child(5) {
-        --accent: var(--blue);
+        --accent: var(--teal);
       }
 
       .item:nth-child(6) {
-        --accent: var(--violet);
+        --accent: var(--blue);
       }
 
       .item:nth-child(7) {
-        --accent: #16a34a;
+        --accent: var(--violet);
       }
 
       .item:nth-child(8) {
         --accent: #0891b2;
+      }
+
+      .item:nth-child(9) {
+        --accent: #db2777;
+      }
+
+      .item:nth-child(10) {
+        --accent: #64748b;
       }
 
       footer {
@@ -297,9 +305,9 @@
           それぞれのカードから、GitHub Pages で公開している実際のプレイ画面へ移動できます。
         </p>
         <div class="stats" aria-label="公開状況">
-          <span class="stat">8 public pages</span>
+          <span class="stat">10 public pages</span>
           <span class="stat">GitHub Pages only</span>
-          <span class="stat">Updated 2026.06.21</span>
+          <span class="stat">Updated 2026.06.23</span>
         </div>
       </div>
     </header>
@@ -308,8 +316,8 @@
       <section class="intro" aria-labelledby="collection-title">
         <div class="section-inner">
           <p id="collection-title">
-            リポジトリ一覧ではなく、公開ページとして触れるものだけを並べています。
-            スクリーンショットもタイトル画面ではなく、プレイ中や編集作業中など、その作品の中心になる体験が見える状態を選びました。
+            GitHub の公開リポジトリと各 GitHub Pages の公開状態を確認し、実際に表示できるページだけを並べています。
+            スクリーンショットはタイトル画面ではなく、プレイ中、観察中、編集作業中など、その作品の中心になる体験が見える状態を選びました。
           </p>
         </div>
       </section>
@@ -334,6 +342,18 @@
             <p>
               フェロモンや環境反応で群れの動きが変わる3D観察ラボ。
               個体の小さな反応が、探索、密集、迂回といった群れ全体のふるまいへ広がる様子を眺められます。
+            </p>
+            <span class="open">ページを開く</span>
+          </span>
+        </a>
+
+        <a class="item" href="https://yohei2000.github.io/antEX/" target="_blank" rel="noopener noreferrer">
+          <img class="shot" src="assets/antEX.png" alt="antEX のコロニー管理画面" />
+          <span class="copy">
+            <h2>antEX</h2>
+            <p>
+              小さな巣と少数のアリから、地下帝国を広げていく3D放置ゲーム。
+              食料、収容上限、兵隊、遠征を管理しながら、採餌と外敵への備えを積み上げてコロニーを育てます。
             </p>
             <span class="open">ページを開く</span>
           </span>
@@ -410,13 +430,25 @@
             <span class="open">ページを開く</span>
           </span>
         </a>
+
+        <a class="item" href="https://yohei2000.github.io/voxel-town-3d/" target="_blank" rel="noopener noreferrer">
+          <img class="shot" src="assets/voxel-town-3d.png" alt="Voxel Town 3D のかくれんぼプレイ画面" />
+          <span class="copy">
+            <h2>Voxel Town 3D</h2>
+            <p>
+              ローポリの町を鬼視点で歩き、AIで逃げる相手を探す3Dかくれんぼプロトタイプ。
+              視界コーン、足音メーター、視界メーター、捕獲判定で、見つける緊張感を小さく試しています。
+            </p>
+            <span class="open">ページを開く</span>
+          </span>
+        </a>
       </section>
     </main>
 
     <footer>
       <div class="section-inner">
         <span>yohei2000 GitHub Pages collection</span>
-        <span>Links verified: 2026-06-21</span>
+        <span>Links verified: 2026-06-23</span>
       </div>
     </footer>
   </body>

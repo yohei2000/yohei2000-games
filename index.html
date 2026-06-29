@@ -31,6 +31,10 @@
         box-sizing: border-box;
       }
 
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
         margin: 0;
         background: var(--paper);
@@ -43,7 +47,7 @@
 
       .hero {
         position: relative;
-        min-height: clamp(480px, 82vh, 760px);
+        min-height: clamp(500px, 70vh, 680px);
         display: grid;
         align-items: end;
         overflow: hidden;
@@ -76,7 +80,7 @@
       .hero-inner {
         position: relative;
         z-index: 1;
-        padding: 32px 0 92px;
+        padding: 32px 0 72px;
       }
 
       .eyebrow {
@@ -89,24 +93,46 @@
       h1 {
         max-width: 780px;
         margin: 0;
-        font-size: clamp(3rem, 9vw, 6.7rem);
+        font-size: clamp(3rem, 8vw, 6.2rem);
         line-height: 0.94;
         letter-spacing: 0;
       }
 
       .lead {
-        max-width: 720px;
+        max-width: 700px;
         margin: 24px 0 0;
         color: #e7eef8;
         font-size: clamp(1rem, 2vw, 1.25rem);
-        line-height: 1.9;
+        line-height: 1.78;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 14px;
+        margin-top: 28px;
+      }
+
+      .primary-action {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        border: 1px solid rgba(255, 255, 255, 0.72);
+        border-radius: 8px;
+        padding: 10px 18px;
+        background: #ffffff;
+        color: var(--ink);
+        font-weight: 800;
+        text-decoration: none;
+        box-shadow: 0 14px 38px rgba(0, 0, 0, 0.22);
       }
 
       .stats {
         display: flex;
         flex-wrap: wrap;
         gap: 12px;
-        margin-top: 30px;
       }
 
       .stat {
@@ -124,7 +150,27 @@
       }
 
       .intro {
-        padding: 34px 0 18px;
+        padding: 44px 0 18px;
+      }
+
+      .intro-layout {
+        display: grid;
+        grid-template-columns: minmax(220px, 0.75fr) minmax(0, 1.25fr);
+        gap: 36px;
+        align-items: start;
+      }
+
+      .section-kicker {
+        margin: 0 0 10px;
+        color: var(--teal);
+        font-size: 0.78rem;
+        font-weight: 800;
+      }
+
+      .section-title {
+        margin: 0;
+        font-size: clamp(1.65rem, 3vw, 2.35rem);
+        line-height: 1.14;
       }
 
       .intro p {
@@ -138,7 +184,7 @@
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 18px;
-        padding: 18px 0 64px;
+        padding: 18px 0 72px;
       }
 
       .item {
@@ -165,6 +211,12 @@
         box-shadow: 0 18px 42px rgba(19, 23, 29, 0.13);
       }
 
+      .item:focus-visible,
+      .primary-action:focus-visible {
+        outline: 3px solid color-mix(in srgb, var(--accent, var(--teal)) 70%, #ffffff);
+        outline-offset: 4px;
+      }
+
       .shot {
         width: 100%;
         aspect-ratio: 16 / 9;
@@ -185,6 +237,23 @@
         line-height: 1.35;
       }
 
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .tag {
+        border: 1px solid color-mix(in srgb, var(--accent) 28%, var(--line));
+        border-radius: 6px;
+        padding: 4px 8px;
+        background: color-mix(in srgb, var(--accent) 8%, #ffffff);
+        color: color-mix(in srgb, var(--accent) 58%, var(--ink));
+        font-size: 0.75rem;
+        font-weight: 750;
+        line-height: 1.2;
+      }
+
       .copy p {
         margin: 0;
         color: var(--muted);
@@ -197,6 +266,8 @@
         color: var(--accent);
         font-size: 0.86rem;
         font-weight: 800;
+        text-decoration: underline;
+        text-underline-offset: 4px;
       }
 
       .item:nth-child(2) {
@@ -263,24 +334,54 @@
         }
 
         .hero {
-          min-height: 76vh;
+          min-height: 560px;
           background-position: 56% center;
         }
 
         .hero-inner {
-          padding-bottom: 76px;
+          padding-bottom: 54px;
         }
 
         .lead {
           line-height: 1.75;
         }
 
+        .hero-actions {
+          gap: 10px;
+          margin-top: 22px;
+        }
+
+        .primary-action {
+          width: 100%;
+        }
+
         .stats {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
           gap: 8px;
+          width: 100%;
         }
 
         .stat {
-          width: 100%;
+          display: grid;
+          min-height: 42px;
+          place-items: center;
+          padding: 8px 8px;
+          text-align: center;
+          font-size: 0.76rem;
+        }
+
+        .intro {
+          padding: 28px 0 12px;
+        }
+
+        .intro-layout {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+
+        .intro p {
+          line-height: 1.8;
         }
 
         .grid {
@@ -291,6 +392,20 @@
 
         .copy {
           padding: 16px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        .item {
+          transition: none;
+        }
+
+        .item:hover {
+          transform: none;
         }
       }
     </style>
@@ -304,143 +419,193 @@
           公開中のゲーム、シミュレーション、制作ツールだけを集めたポートフォリオです。
           それぞれのカードから、GitHub Pages で公開している実際のプレイ画面へ移動できます。
         </p>
-        <div class="stats" aria-label="公開状況">
-          <span class="stat">10 public pages</span>
-          <span class="stat">GitHub Pages only</span>
-          <span class="stat">Updated 2026.06.23</span>
+        <div class="hero-actions">
+          <a class="primary-action" href="#projects">作品を見る</a>
+          <div class="stats" aria-label="公開状況">
+            <span class="stat">10 public pages</span>
+            <span class="stat">GitHub Pages</span>
+            <span class="stat">Updated 2026.06.23</span>
+          </div>
         </div>
       </div>
     </header>
 
     <main>
       <section class="intro" aria-labelledby="collection-title">
-        <div class="section-inner">
-          <p id="collection-title">
+        <div class="section-inner intro-layout">
+          <div>
+            <p class="section-kicker">PUBLIC PAGES</p>
+            <h2 class="section-title" id="collection-title">公開ページ一覧</h2>
+          </div>
+          <p>
             GitHub の公開リポジトリと各 GitHub Pages の公開状態を確認し、実際に表示できるページだけを並べています。
             スクリーンショットはタイトル画面ではなく、プレイ中、観察中、編集作業中など、その作品の中心になる体験が見える状態を選びました。
           </p>
         </div>
       </section>
 
-      <section class="section-inner grid" aria-label="公開ページ一覧">
+      <section class="section-inner grid" id="projects" aria-label="公開ページ一覧">
         <a class="item" href="https://yohei2000.github.io/alien_kick/" target="_blank" rel="noopener noreferrer">
           <img class="shot" src="assets/alien_kick.png" alt="Alien Kick Buster のプレイ中画面" />
-          <span class="copy">
+          <div class="copy">
             <h2>Alien Kick Buster</h2>
+            <span class="tags" aria-label="作品タグ">
+              <span class="tag">Action</span>
+              <span class="tag">Arcade</span>
+              <span class="tag">Timing</span>
+            </span>
             <p>
               夜のフィールドで接近してくるエイリアンを見切り、間合いとタイミングで蹴り返すアーケードアクション。
               守る、引きつける、反撃するという短い判断の連続を前面に出しています。
             </p>
             <span class="open">ページを開く</span>
-          </span>
+          </div>
         </a>
 
         <a class="item" href="https://yohei2000.github.io/ant-colony-reaction-lab/" target="_blank" rel="noopener noreferrer">
           <img class="shot" src="assets/ant-colony-reaction-lab.png" alt="Ant Colony Reaction Lab のシミュレーション画面" />
-          <span class="copy">
+          <div class="copy">
             <h2>Ant Colony Reaction Lab</h2>
+            <span class="tags" aria-label="作品タグ">
+              <span class="tag">Simulation</span>
+              <span class="tag">3D</span>
+              <span class="tag">Observation</span>
+            </span>
             <p>
               フェロモンや環境反応で群れの動きが変わる3D観察ラボ。
               個体の小さな反応が、探索、密集、迂回といった群れ全体のふるまいへ広がる様子を眺められます。
             </p>
             <span class="open">ページを開く</span>
-          </span>
+          </div>
         </a>
 
         <a class="item" href="https://yohei2000.github.io/antEX/" target="_blank" rel="noopener noreferrer">
           <img class="shot" src="assets/antEX.png" alt="antEX のコロニー管理画面" />
-          <span class="copy">
+          <div class="copy">
             <h2>antEX</h2>
+            <span class="tags" aria-label="作品タグ">
+              <span class="tag">Idle</span>
+              <span class="tag">Strategy</span>
+              <span class="tag">3D</span>
+            </span>
             <p>
               小さな巣と少数のアリから、地下帝国を広げていく3D放置ゲーム。
               食料、収容上限、兵隊、遠征を管理しながら、採餌と外敵への備えを積み上げてコロニーを育てます。
             </p>
             <span class="open">ページを開く</span>
-          </span>
+          </div>
         </a>
 
         <a class="item" href="https://yohei2000.github.io/battle-intent-sim/" target="_blank" rel="noopener noreferrer">
           <img class="shot" src="assets/battle-intent-sim.png" alt="Intent Battle Sim の戦場操作画面" />
-          <span class="copy">
+          <div class="copy">
             <h2>Intent Battle Sim</h2>
+            <span class="tags" aria-label="作品タグ">
+              <span class="tag">Tactics</span>
+              <span class="tag">Simulation</span>
+            </span>
             <p>
               部隊を直接動かすのではなく、矢印や包囲の意図を描いて戦線を再配置する戦術シミュレーション。
               命令の伝達遅れと士気の崩れを読みながら、押す、引く、立て直す判断を試します。
             </p>
             <span class="open">ページを開く</span>
-          </span>
+          </div>
         </a>
 
         <a class="item" href="https://yohei2000.github.io/ecosystem-god-sim/" target="_blank" rel="noopener noreferrer">
           <img class="shot" src="assets/ecosystem-god-sim.png" alt="Ecosystem God Sim の生態系フィールド画面" />
-          <span class="copy">
+          <div class="copy">
             <h2>Ecosystem God Sim</h2>
+            <span class="tags" aria-label="作品タグ">
+              <span class="tag">Sandbox</span>
+              <span class="tag">Simulation</span>
+            </span>
             <p>
               地形、植物、草食動物、捕食者が絡み合う生態系サンドボックス。
               雨や火などの介入が、増殖、移動、食物連鎖のバランスをどう崩し、どう回復させるかを観察できます。
             </p>
             <span class="open">ページを開く</span>
-          </span>
+          </div>
         </a>
 
         <a class="item" href="https://yohei2000.github.io/manga-panel-editor/" target="_blank" rel="noopener noreferrer">
           <img class="shot" src="assets/manga-panel-editor.png" alt="Manga Panel Editor の編集画面" />
-          <span class="copy">
+          <div class="copy">
             <h2>Manga Panel Editor</h2>
+            <span class="tags" aria-label="作品タグ">
+              <span class="tag">Tool</span>
+              <span class="tag">Editor</span>
+            </span>
             <p>
               漫画ページのコマ割りをブラウザ上で組む小さな制作ツール。
               比率や位置を触りながら、読みやすい余白、コマの流れ、書き出し前の画面設計を素早く試せます。
             </p>
             <span class="open">ページを開く</span>
-          </span>
+          </div>
         </a>
 
         <a class="item" href="https://yohei2000.github.io/paper-jam-dodgeball/" target="_blank" rel="noopener noreferrer">
           <img class="shot" src="assets/paper-jam-dodgeball.png" alt="Paper Jam Dodgeball の試合画面" />
-          <span class="copy">
+          <div class="copy">
             <h2>Paper Jam Dodgeball</h2>
+            <span class="tags" aria-label="作品タグ">
+              <span class="tag">3D</span>
+              <span class="tag">Sports</span>
+            </span>
             <p>
               紙工作のような選手たちが立体コートでぶつかる3Dドッジボール。
               小さなキャラクターの密集、回避、投げ合いが一目で見える、にぎやかな試合感を狙ったプロトタイプです。
             </p>
             <span class="open">ページを開く</span>
-          </span>
+          </div>
         </a>
 
         <a class="item" href="https://yohei2000.github.io/slime-battle-sim/" target="_blank" rel="noopener noreferrer">
           <img class="shot" src="assets/slime-battle-sim.png" alt="Slime Battle Sim の編成画面" />
-          <span class="copy">
+          <div class="copy">
             <h2>Slime Battle Sim</h2>
+            <span class="tags" aria-label="作品タグ">
+              <span class="tag">Strategy</span>
+              <span class="tag">Simulation</span>
+            </span>
             <p>
               弾性をもつユニットを編成し、ぶつかり方と崩れ方を読むスライム戦術シム。
               準備フェーズで性質を選び、戦場で軍団が押し合う様子から次の編成を考える遊びです。
             </p>
             <span class="open">ページを開く</span>
-          </span>
+          </div>
         </a>
 
         <a class="item" href="https://yohei2000.github.io/splash-tomb/" target="_blank" rel="noopener noreferrer">
           <img class="shot" src="assets/splash-tomb.png" alt="Splash Tomb のプレイ中画面" />
-          <span class="copy">
+          <div class="copy">
             <h2>Splash Tomb</h2>
+            <span class="tags" aria-label="作品タグ">
+              <span class="tag">Action</span>
+              <span class="tag">Exploration</span>
+            </span>
             <p>
               暗い墓所のような空間を、青い三角形の機体で進むミニアクション。
               視界の狭さ、敵や障害物の配置、方向転換の手触りで探索と緊張感を作っています。
             </p>
             <span class="open">ページを開く</span>
-          </span>
+          </div>
         </a>
 
         <a class="item" href="https://yohei2000.github.io/voxel-town-3d/" target="_blank" rel="noopener noreferrer">
           <img class="shot" src="assets/voxel-town-3d.png" alt="Voxel Town 3D のかくれんぼプレイ画面" />
-          <span class="copy">
+          <div class="copy">
             <h2>Voxel Town 3D</h2>
+            <span class="tags" aria-label="作品タグ">
+              <span class="tag">3D</span>
+              <span class="tag">Stealth</span>
+            </span>
             <p>
               ローポリの町を鬼視点で歩き、AIで逃げる相手を探す3Dかくれんぼプロトタイプ。
               視界コーン、足音メーター、視界メーター、捕獲判定で、見つける緊張感を小さく試しています。
             </p>
             <span class="open">ページを開く</span>
-          </span>
+          </div>
         </a>
       </section>
     </main>

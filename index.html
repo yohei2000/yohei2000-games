@@ -58,7 +58,7 @@
             rgba(5, 8, 13, 0.58) 48%,
             rgba(5, 8, 13, 0.2)
           ),
-          url("assets/ecosystem-god-sim.png") center / cover;
+          url("assets/antEX.png") center / cover;
         color: #ffffff;
       }
 
@@ -235,6 +235,13 @@
         margin: 0;
         font-size: 1.1rem;
         line-height: 1.35;
+      }
+
+      .updated {
+        color: color-mix(in srgb, var(--accent) 62%, var(--ink));
+        font-size: 0.78rem;
+        font-weight: 800;
+        line-height: 1.2;
       }
 
       .tags {
@@ -424,7 +431,7 @@
           <div class="stats" aria-label="公開状況">
             <span class="stat">10 public pages</span>
             <span class="stat">GitHub Pages</span>
-            <span class="stat">Updated 2026.06.23</span>
+            <span class="stat">Updated 2026.06.30</span>
           </div>
         </div>
       </div>
@@ -439,50 +446,17 @@
           </div>
           <p>
             GitHub の公開リポジトリと各 GitHub Pages の公開状態を確認し、実際に表示できるページだけを並べています。
-            スクリーンショットはタイトル画面ではなく、プレイ中、観察中、編集作業中など、その作品の中心になる体験が見える状態を選びました。
+            更新日時が新しいページから順に並べ、スクリーンショットはタイトル画面ではなく、プレイ中、観察中、編集作業中など、その作品の中心になる体験が見える状態を選びました。
           </p>
         </div>
       </section>
 
       <section class="section-inner grid" id="projects" aria-label="公開ページ一覧">
-        <a class="item" href="https://yohei2000.github.io/alien_kick/" target="_blank" rel="noopener noreferrer">
-          <img class="shot" src="assets/alien_kick.png" alt="Alien Kick Buster のプレイ中画面" />
-          <div class="copy">
-            <h2>Alien Kick Buster</h2>
-            <span class="tags" aria-label="作品タグ">
-              <span class="tag">Action</span>
-              <span class="tag">Arcade</span>
-              <span class="tag">Timing</span>
-            </span>
-            <p>
-              夜のフィールドで接近してくるエイリアンを見切り、間合いとタイミングで蹴り返すアーケードアクション。
-              守る、引きつける、反撃するという短い判断の連続を前面に出しています。
-            </p>
-            <span class="open">ページを開く</span>
-          </div>
-        </a>
-
-        <a class="item" href="https://yohei2000.github.io/ant-colony-reaction-lab/" target="_blank" rel="noopener noreferrer">
-          <img class="shot" src="assets/ant-colony-reaction-lab.png" alt="Ant Colony Reaction Lab のシミュレーション画面" />
-          <div class="copy">
-            <h2>Ant Colony Reaction Lab</h2>
-            <span class="tags" aria-label="作品タグ">
-              <span class="tag">Simulation</span>
-              <span class="tag">3D</span>
-              <span class="tag">Observation</span>
-            </span>
-            <p>
-              フェロモンや環境反応で群れの動きが変わる3D観察ラボ。
-              個体の小さな反応が、探索、密集、迂回といった群れ全体のふるまいへ広がる様子を眺められます。
-            </p>
-            <span class="open">ページを開く</span>
-          </div>
-        </a>
-
         <a class="item" href="https://yohei2000.github.io/antEX/" target="_blank" rel="noopener noreferrer">
           <img class="shot" src="assets/antEX.png" alt="antEX のコロニー管理画面" />
           <div class="copy">
             <h2>antEX</h2>
+            <span class="updated">Updated 2026.06.30</span>
             <span class="tags" aria-label="作品タグ">
               <span class="tag">Idle</span>
               <span class="tag">Strategy</span>
@@ -496,10 +470,29 @@
           </div>
         </a>
 
+        <a class="item" href="https://yohei2000.github.io/ant-colony-reaction-lab/" target="_blank" rel="noopener noreferrer">
+          <img class="shot" src="assets/ant-colony-reaction-lab.png" alt="Ant Colony Reaction Lab のシミュレーション画面" />
+          <div class="copy">
+            <h2>Ant Colony Reaction Lab</h2>
+            <span class="updated">Updated 2026.06.27</span>
+            <span class="tags" aria-label="作品タグ">
+              <span class="tag">Simulation</span>
+              <span class="tag">3D</span>
+              <span class="tag">Observation</span>
+            </span>
+            <p>
+              フェロモンや環境反応で群れの動きが変わる3D観察ラボ。
+              個体の小さな反応が、探索、密集、迂回といった群れ全体のふるまいへ広がる様子を眺められます。
+            </p>
+            <span class="open">ページを開く</span>
+          </div>
+        </a>
+
         <a class="item" href="https://yohei2000.github.io/battle-intent-sim/" target="_blank" rel="noopener noreferrer">
           <img class="shot" src="assets/battle-intent-sim.png" alt="Intent Battle Sim の戦場操作画面" />
           <div class="copy">
             <h2>Intent Battle Sim</h2>
+            <span class="updated">Updated 2026.06.23</span>
             <span class="tags" aria-label="作品タグ">
               <span class="tag">Tactics</span>
               <span class="tag">Simulation</span>
@@ -512,33 +505,19 @@
           </div>
         </a>
 
-        <a class="item" href="https://yohei2000.github.io/ecosystem-god-sim/" target="_blank" rel="noopener noreferrer">
-          <img class="shot" src="assets/ecosystem-god-sim.png" alt="Ecosystem God Sim の生態系フィールド画面" />
+        <a class="item" href="https://yohei2000.github.io/alien_kick/" target="_blank" rel="noopener noreferrer">
+          <img class="shot" src="assets/alien_kick.png" alt="Alien Kick Buster のプレイ中画面" />
           <div class="copy">
-            <h2>Ecosystem God Sim</h2>
+            <h2>Alien Kick Buster</h2>
+            <span class="updated">Updated 2026.06.23</span>
             <span class="tags" aria-label="作品タグ">
-              <span class="tag">Sandbox</span>
-              <span class="tag">Simulation</span>
+              <span class="tag">Action</span>
+              <span class="tag">Arcade</span>
+              <span class="tag">Timing</span>
             </span>
             <p>
-              地形、植物、草食動物、捕食者が絡み合う生態系サンドボックス。
-              雨や火などの介入が、増殖、移動、食物連鎖のバランスをどう崩し、どう回復させるかを観察できます。
-            </p>
-            <span class="open">ページを開く</span>
-          </div>
-        </a>
-
-        <a class="item" href="https://yohei2000.github.io/manga-panel-editor/" target="_blank" rel="noopener noreferrer">
-          <img class="shot" src="assets/manga-panel-editor.png" alt="Manga Panel Editor の編集画面" />
-          <div class="copy">
-            <h2>Manga Panel Editor</h2>
-            <span class="tags" aria-label="作品タグ">
-              <span class="tag">Tool</span>
-              <span class="tag">Editor</span>
-            </span>
-            <p>
-              漫画ページのコマ割りをブラウザ上で組む小さな制作ツール。
-              比率や位置を触りながら、読みやすい余白、コマの流れ、書き出し前の画面設計を素早く試せます。
+              夜のフィールドで接近してくるエイリアンを見切り、間合いとタイミングで蹴り返すアーケードアクション。
+              守る、引きつける、反撃するという短い判断の連続を前面に出しています。
             </p>
             <span class="open">ページを開く</span>
           </div>
@@ -548,6 +527,7 @@
           <img class="shot" src="assets/paper-jam-dodgeball.png" alt="Paper Jam Dodgeball の試合画面" />
           <div class="copy">
             <h2>Paper Jam Dodgeball</h2>
+            <span class="updated">Updated 2026.06.23</span>
             <span class="tags" aria-label="作品タグ">
               <span class="tag">3D</span>
               <span class="tag">Sports</span>
@@ -564,6 +544,7 @@
           <img class="shot" src="assets/slime-battle-sim.png" alt="Slime Battle Sim の編成画面" />
           <div class="copy">
             <h2>Slime Battle Sim</h2>
+            <span class="updated">Updated 2026.06.23</span>
             <span class="tags" aria-label="作品タグ">
               <span class="tag">Strategy</span>
               <span class="tag">Simulation</span>
@@ -576,26 +557,11 @@
           </div>
         </a>
 
-        <a class="item" href="https://yohei2000.github.io/splash-tomb/" target="_blank" rel="noopener noreferrer">
-          <img class="shot" src="assets/splash-tomb.png" alt="Splash Tomb のプレイ中画面" />
-          <div class="copy">
-            <h2>Splash Tomb</h2>
-            <span class="tags" aria-label="作品タグ">
-              <span class="tag">Action</span>
-              <span class="tag">Exploration</span>
-            </span>
-            <p>
-              暗い墓所のような空間を、青い三角形の機体で進むミニアクション。
-              視界の狭さ、敵や障害物の配置、方向転換の手触りで探索と緊張感を作っています。
-            </p>
-            <span class="open">ページを開く</span>
-          </div>
-        </a>
-
         <a class="item" href="https://yohei2000.github.io/voxel-town-3d/" target="_blank" rel="noopener noreferrer">
           <img class="shot" src="assets/voxel-town-3d.png" alt="Voxel Town 3D のかくれんぼプレイ画面" />
           <div class="copy">
             <h2>Voxel Town 3D</h2>
+            <span class="updated">Updated 2026.06.22</span>
             <span class="tags" aria-label="作品タグ">
               <span class="tag">3D</span>
               <span class="tag">Stealth</span>
@@ -607,13 +573,64 @@
             <span class="open">ページを開く</span>
           </div>
         </a>
+
+        <a class="item" href="https://yohei2000.github.io/ecosystem-god-sim/" target="_blank" rel="noopener noreferrer">
+          <img class="shot" src="assets/ecosystem-god-sim.png" alt="Ecosystem God Sim の生態系フィールド画面" />
+          <div class="copy">
+            <h2>Ecosystem God Sim</h2>
+            <span class="updated">Updated 2026.06.21</span>
+            <span class="tags" aria-label="作品タグ">
+              <span class="tag">Sandbox</span>
+              <span class="tag">Simulation</span>
+            </span>
+            <p>
+              地形、植物、草食動物、捕食者が絡み合う生態系サンドボックス。
+              雨や火などの介入が、増殖、移動、食物連鎖のバランスをどう崩し、どう回復させるかを観察できます。
+            </p>
+            <span class="open">ページを開く</span>
+          </div>
+        </a>
+
+        <a class="item" href="https://yohei2000.github.io/manga-panel-editor/" target="_blank" rel="noopener noreferrer">
+          <img class="shot" src="assets/manga-panel-editor.png" alt="Manga Panel Editor の編集画面" />
+          <div class="copy">
+            <h2>Manga Panel Editor</h2>
+            <span class="updated">Updated 2026.06.21</span>
+            <span class="tags" aria-label="作品タグ">
+              <span class="tag">Tool</span>
+              <span class="tag">Editor</span>
+            </span>
+            <p>
+              漫画ページのコマ割りをブラウザ上で組む小さな制作ツール。
+              比率や位置を触りながら、読みやすい余白、コマの流れ、書き出し前の画面設計を素早く試せます。
+            </p>
+            <span class="open">ページを開く</span>
+          </div>
+        </a>
+
+        <a class="item" href="https://yohei2000.github.io/splash-tomb/" target="_blank" rel="noopener noreferrer">
+          <img class="shot" src="assets/splash-tomb.png" alt="Splash Tomb のプレイ中画面" />
+          <div class="copy">
+            <h2>Splash Tomb</h2>
+            <span class="updated">Updated 2026.06.18</span>
+            <span class="tags" aria-label="作品タグ">
+              <span class="tag">Action</span>
+              <span class="tag">Exploration</span>
+            </span>
+            <p>
+              暗い墓所のような空間を、青い三角形の機体で進むミニアクション。
+              視界の狭さ、敵や障害物の配置、方向転換の手触りで探索と緊張感を作っています。
+            </p>
+            <span class="open">ページを開く</span>
+          </div>
+        </a>
       </section>
     </main>
 
     <footer>
       <div class="section-inner">
         <span>yohei2000 GitHub Pages collection</span>
-        <span>Links verified: 2026-06-23</span>
+        <span>Links verified: 2026-06-30</span>
       </div>
     </footer>
   </body>
